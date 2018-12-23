@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "fir.im 下载助手",
+  "version": "0.1",
+  "description": "为方便从fir.im下载android/ios客户端",
+  "icons": {
+    "48": "src/img/icon.png"
+  },
+  "author": "Sariel.D",
+  "homepage_url": "https://github.com/sari3l/Chrome-Extensions/tree/master/fir.im%20Downloader",
+  "version_name": "v1.0",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus",
+    "tabs",
+    "downloads",
+    "declarativeContent",
+    "https://fir.im/*",
+    "https://download.fir.im/apps/*"
+  ],
+  "background": {
+    "page": "html/background.html"
+  },
+
+  "content_scripts":
+  [
+    {
+      "matches": ["https://fir.im/*"],
+      "js": ["src/js/content-script.js", "vendors/jquery-3.3.1.min.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
