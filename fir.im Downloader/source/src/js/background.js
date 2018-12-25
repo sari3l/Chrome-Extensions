@@ -56,7 +56,7 @@ function getDownloadLink(obj){
     }
 }
 
-// 解析 json 信息并返回给popup
+// 解析 json 信息并加入到 lists 中
 function parseJSON(frontLink, jsonInfoList, branch){
     for (var i=0; i<jsonInfoList.length; i++){
         var link = frontLink + jsonInfoList[i].id;
@@ -99,7 +99,6 @@ chrome.runtime.onInstalled.addListener(function(){
         chrome.declarativeContent.onPageChanged.addRules([
             {
                 conditions: [
-                    // 只有打开百度才显示pageAction
                     new chrome.declarativeContent.PageStateMatcher({pageUrl: {urlContains: 'fir.im'}})
                 ],
                 actions: [new chrome.declarativeContent.ShowPageAction()]
