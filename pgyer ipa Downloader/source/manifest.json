@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "蒲公英 IPA 下载助手",
+  "version": "0.1",
+  "description": "为方便从pgyer.com下载ios客户端",
+  "icons": {
+    "48": "/src/img/icon.png"
+  },
+  "author": "Sariel.D",
+  "homepage_url": "https://github.com/sari3l/Chrome-Extensions/tree/master/pgyer%20ipa%20Downloader",
+  "version_name": "v1.0",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus",
+    "tabs",
+    "downloads",
+    "notifications",
+    "declarativeContent",
+    "https://www.pgyer.com/*"
+  ],
+  "page_action": {
+    "default_icon": "/src/img/icon.png",
+    "default_popup": "/html/popup.html"
+  },
+  "background": {
+    "page": "/html/background.html"
+  }
+}
